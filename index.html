@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Sri Balaji Rice Depot – Premium Rice Trading</title>
+  <!-- Google Fonts & Simple CSS Reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fefaf5;
+      color: #2c2418;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* container utility */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / navbar */
+    .header {
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      background: #e6b422;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 700;
+      color: #2c2418;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .company-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #2c2418;
+    }
+    .company-name span {
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: block;
+      color: #b97f10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #3e2f1f;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d4a11e;
+    }
+
+    /* buttons & tags */
+    .btn-gold {
+      background: #e6b422;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1f1a10;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-gold:hover {
+      background: #cd9f1a;
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(105deg, #fff7ed 0%, #fef0df 100%);
+      padding: 70px 0 80px;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 3.1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #1f2a1b;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #4a3b28;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+    .stat-item h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #b97f10;
+    }
+
+    .hero-img {
+      flex: 0.8;
+      text-align: center;
+      background: rgba(230, 180, 34, 0.15);
+      border-radius: 60px;
+      padding: 20px;
+    }
+
+    .hero-img span {
+      font-size: 9rem;
+    }
+
+    /* sections */
+    .section {
+      padding: 64px 0;
+      border-bottom: 1px solid #f0e2d0;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #e6b422;
+      border-radius: 4px;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      flex: 1;
+      min-width: 220px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+      transition: 0.2s;
+      border: 1px solid #f7e8d9;
+    }
+
+    .info-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .address-block, .contact-details {
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    .map-placeholder {
+      background: #e9e2d8;
+      border-radius: 24px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    /* policy & terms content (card style) */
+    .legal-card {
+      background: #ffffffdd;
+      background: white;
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      border: 1px solid #f1e3d4;
+    }
+
+    .legal-card h3 {
+      font-size: 1.5rem;
+      margin: 28px 0 12px 0;
+    }
+    .legal-card h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .legal-card p, .legal-card li {
+      margin-bottom: 12px;
+      color: #2e2a24;
+    }
+    .legal-card ul {
+      padding-left: 24px;
+      margin: 16px 0;
+    }
+
+    hr {
+      margin: 32px 0;
+      border-color: #eedbc8;
+    }
+
+    /* contact page specific */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .contact-info {
+      flex: 1;
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    .contact-form-area {
+      flex: 1;
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #e2cfbc;
+      border-radius: 32px;
+      font-family: 'Inter', sans-serif;
+      background: #fffbf7;
+    }
+    .form-group textarea {
+      border-radius: 24px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #1f1a10;
+      color: #e9dacb;
+      padding: 40px 0 24px;
+      margin-top: 20px;
+    }
+
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 32px;
+    }
+    .footer-links a {
+      color: #e9dacb;
+      text-decoration: none;
+      margin-right: 24px;
+      font-size: 0.9rem;
+    }
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #3a2e20;
+      padding-top: 24px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 { font-size: 2.2rem; }
+      .nav-wrapper { flex-direction: column; align-items: flex-start; }
+      .nav-links { justify-content: flex-start; }
+      .section-title { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Navigation -->
+<header class="header">
+  <div class="container nav-wrapper">
+    <div class="logo-area">
+      <div class="logo-icon">🌾</div>
+      <div class="company-name">
+        SRI BALAJI RICE DEPOT
+        <span>Est. 1998 | Trusted Rice Traders</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#home" id="nav-home">Home</a>
+      <a href="#contact-page" id="nav-contact">Contact</a>
+      <a href="#privacy" id="nav-privacy">Privacy</a>
+      <a href="#terms" id="nav-terms">Terms & Conditions</a>
+    </div>
+    <div>
+      <a href="#contact-page" class="btn-gold" id="quick-contact-btn">📞 Inquire Now</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HOME SECTION (Rice trading showcase) -->
+  <section id="home">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Premium Rice<br>Trading Since 1998</h1>
+          <p>Reliable bulk supply of finest grains — Basmati, Non-Basmati, Sona Masoori & more. <strong>Sri Balaji Rice Depot</strong> serves retailers, wholesalers & industries across Hyderabad and Telangana.</p>
+          <div class="hero-stats">
+            <div class="stat-item"><h3>25+</h3><p>Years of Trust</p></div>
+            <div class="stat-item"><h3>500+</h3><p>Happy Clients</p></div>
+            <div class="stat-item"><h3>24/7</h3><p>Supply Support</p></div>
+          </div>
+          <a href="#contact-page" class="btn-gold" style="margin-top: 20px; display: inline-block;">Get Trade Quote →</a>
+        </div>
+        <div class="hero-img">
+          <span>🍚</span>
+          <p style="margin-top: 12px; font-weight: 500;">Superior Grain Quality<br>Direct from mandis</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business description highlight -->
+    <div class="container section">
+      <h2 class="section-title">Our Core Trading</h2>
+      <div class="card-grid">
+        <div class="info-card"><h3>🌾 Basmati Rice</h3><p>Premium aromatic long-grain, aged perfection for export & domestic.</p></div>
+        <div class="info-card"><h3>🍚 Non-Basmati</h3><p>IR64, Sona Masoori, Ponni, Swarna — competitive bulk rates.</p></div>
+        <div class="info-card"><h3>🚛 Logistics & Warehousing</h3><p>End-to-end delivery to Musheerabad, Hyderabad & across India.</p></div>
+        <div class="info-card"><h3>📦 Custom Packing</h3><p>Jute bags, PP bags, 1kg to 50kg as per buyer needs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT PAGE SECTION (fully featured) -->
+  <section id="contact-page" class="section">
+    <div class="container">
+      <h2 class="section-title">Let’s Connect – Supply & Trade</h2>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <h3 style="font-size: 1.7rem; margin-bottom: 16px;">📬 Office Address</h3>
+          <p><strong>SRI BALAJI RICE DEPOT</strong><br>
+          1-936/1/3/A RAMNAGAR, MUSHEERABAD, HYDERABAD - 500020<br>
+          Telangana, India.</p>
+          <div class="map-placeholder">
+            📍 Ramnagar, near Musheerabad X Road | landmark: opp. Balaji Temple
+          </div>
+          <hr>
+          <h3>📞 Direct Contact</h3>
+          <p>📧 Email: <a href="mailto:sribalajiricedepot123@gmail.com" style="color:#b97f10;">sribalajiricedepot123@gmail.com</a><br>
+          📱 Phone / WhatsApp: +91 99899 88770 (Trading Desk)<br>
+          🕒 Mon–Sat: 9:00 AM – 7:00 PM</p>
+          <hr>
+          <h3>🛒 Bulk Enquiry</h3>
+          <p>For container loads, mill-direct pricing, and custom contracts please reach out via the form or call directly.</p>
+        </div>
+        <div class="contact-form-area">
+          <h3>Send Trade Inquiry</h3>
+          <form id="contactForm" action="#" method="post">
+            <div class="form-group">
+              <input type="text" placeholder="Full Name *" id="cname" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address *" id="cemail" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Phone / Mobile" id="cphone">
+            </div>
+            <div class="form-group">
+              <textarea rows="4" placeholder="Message / Rice requirement (quantity, variety) *" id="cmsg" required></textarea>
+            </div>
+            <button type="submit" class="btn-gold">Send Message ➤</button>
+            <p id="formFeedback" style="margin-top: 16px; font-size: 0.85rem;"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY section -->
+  <section id="privacy" class="section">
+    <div class="container">
+      <h2 class="section-title">Privacy Policy</h2>
+      <div class="legal-card">
+        <p><strong>Effective Date:</strong> 1st January 2025 – Sri Balaji Rice Depot (referred to as “Company”, “we”, “our”, “us”) is committed to protecting your personal information. This Privacy Policy governs data collection when you visit our website, contact us via email, phone, or forms.</p>
+        <h3>1. Information We Collect</h3>
+        <p>We may collect personal data such as name, email address, phone number, postal address, and any details provided in messages or trade inquiries. We do not collect sensitive payment information directly.</p>
+        <h3>2. How We Use Your Data</h3>
+        <p> - Respond to your inquiries, quotations & trade support.<br>
+        - Improve our services and communicate about rice stock updates.<br>
+        - Maintain internal records and regulatory compliance.<br>
+        - We do NOT sell or rent personal data to third parties.</p>
+        <h3>3. Data Security</h3>
+        <p>We adopt reasonable security practices to protect your information from unauthorized access. However, no internet transmission is 100% secure.</p>
+        <h3>4. Sharing of Information</h3>
+        <p>We may share details with logistics partners solely to fulfill delivery requests based on your trade orders. Otherwise, we will only disclose if required by law.</p>
+        <h3>5. Contact us for Privacy Concerns</h3>
+        <p>For any privacy-related requests or data deletion, email us at <strong>sribalajiricedepot123@gmail.com</strong>.</p>
+        <p><em>Last updated: April 2025</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS AND CONDITIONS section -->
+  <section id="terms" class="section">
+    <div class="container">
+      <h2 class="section-title">Terms & Conditions</h2>
+      <div class="legal-card">
+        <p>Welcome to <strong>SRI BALAJI RICE DEPOT</strong> website. By accessing or using our website, contacting us for trade, you agree to comply with the following terms.</p>
+        <h3>1. Trading & Quotes</h3>
+        <p>All rice trading quotations are subject to market availability, price fluctuation, and final confirmation. We reserve the right to modify prices without prior notice. Goods remain our property until full payment received.</p>
+        <h3>2. Order & Delivery</h3>
+        <p>Delivery timelines are estimated and may vary based on distance, weather, or logistical issues. Minimum order quantity (MOQ) for bulk trading is typically 1 metric ton, but smaller sample lots can be arranged. All claims for shortage or damage must be reported within 48 hours of delivery.</p>
+        <h3>3. Returns & Cancellation</h3>
+        <p>Due to the nature of agricultural commodities, returns are not accepted after delivery unless product is defective or not as per sample approval. Cancellations prior to dispatch incur a 5% restocking fee.</p>
+        <h3>4. Intellectual Property</h3>
+        <p>All content, logo, brand “Sri Balaji Rice Depot” is our property. You may not reproduce content without prior written permission.</p>
+        <h3>5. Limitation of Liability</h3>
+        <p>We are not liable for indirect losses or third-party claims. Maximum liability is limited to the invoice value of the rice purchased.</p>
+        <h3>6. Governing Law</h3>
+        <p>These terms are governed by the laws of India, and any disputes subject to jurisdiction of Hyderabad, Telangana.</p>
+        <p><strong>For any clarifications, please contact us at Ramnagar office or email us directly.</strong></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER with Copyright & additional links -->
+<footer>
+  <div class="container">
+    <div class="footer-flex">
+      <div>
+        <h3 style="color: #e6b422;">SRI BALAJI RICE DEPOT</h3>
+        <p style="margin-top: 12px;">Trusted rice traders since 1998<br>1-936/1/3/A RAMNAGAR, MUSHEERABAD<br>HYDERABAD - 500020</p>
+        <p>📧 sribalajiricedepot123@gmail.com</p>
+      </div>
+      <div class="footer-links">
+        <h4 style="color:#e6b422;">Quick Links</h4>
+        <p><a href="#home">🏠 Home</a><br>
+        <a href="#contact-page">📞 Contact</a><br>
+        <a href="#privacy">🔒 Privacy Policy</a><br>
+        <a href="#terms">⚖️ Terms & Conditions</a></p>
+      </div>
+      <div>
+        <h4 style="color:#e6b422;">Business Hours</h4>
+        <p>Mon-Sat: 9:00 AM – 7:00 PM<br>Sunday: Closed for trade<br>Emergency support: +91 99899 88770</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 SRI BALAJI RICE DEPOT. All rights reserved. | Rice Trading, Hyderabad | Website designed for integrity & transparency.
+    </div>
+  </div>
+</footer>
+
+<!-- Smooth Scroll and Form Simulator (non-send but gives alert & demonstration) -->
+<script>
+  (function() {
+    // Smooth anchor scroll
+    document.querySelectorAll('.nav-links a, .btn-gold[href^="#"], footer a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#' && targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // Handle quick contact button
+    const quickBtn = document.getElementById('quick-contact-btn');
+    if (quickBtn) {
+      quickBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const contactSec = document.querySelector('#contact-page');
+        if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    // Contact form handling (mock submission with validation)
+    const contactForm = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('cname')?.value.trim();
+        const email = document.getElementById('cemail')?.value.trim();
+        const msg = document.getElementById('cmsg')?.value.trim();
+        
+        if (!name || !email || !msg) {
+          feedback.innerHTML = '⚠️ Please fill in Name, Email, and Message fields.';
+          feedback.style.color = '#c73e1d';
+          return;
+        }
+        const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          feedback.innerHTML = '⚠️ Please enter a valid email address.';
+          feedback.style.color = '#c73e1d';
+          return;
+        }
+        // Simulate successful inquiry - we store a copy (demo) & show success message
+        feedback.innerHTML = '✅ Thank you! Your trade inquiry has been received. Our rice trading team will contact you within 24 hours at the email/phone provided.';
+        feedback.style.color = '#2b6e3c';
+        contactForm.reset();
+        // optional: console log for demo, but not actual backend
+        console.log(`New inquiry from ${name} (${email}) : ${msg}`);
+      });
+    }
+
+    // Optional: Navigation highlight on scroll but it's fine
+    const sections = [
+      { id: 'home', linkId: 'nav-home' },
+      { id: 'contact-page', linkId: 'nav-contact' },
+      { id: 'privacy', linkId: 'nav-privacy' },
+      { id: 'terms', linkId: 'nav-terms' }
+    ];
+    function highlightNav() {
+      let current = '';
+      const scrollPos = window.scrollY + 120;
+      for (let sec of sections) {
+        const element = document.getElementById(sec.id);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+          if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+            current = sec.id;
+            break;
+          }
+        }
+      }
+      sections.forEach(sec => {
+        const navLink = document.getElementById(sec.linkId);
+        if (navLink) {
+          if (current === sec.id) {
+            navLink.style.color = '#d4a11e';
+            navLink.style.fontWeight = '700';
+            navLink.style.borderBottom = '2px solid #e6b422';
+          } else {
+            navLink.style.color = '#3e2f1f';
+            navLink.style.fontWeight = '500';
+            navLink.style.borderBottom = 'none';
+          }
+        }
+      });
+    }
+    window.addEventListener('scroll', highlightNav);
+    window.addEventListener('load', highlightNav);
+  })();
+</script>
+</body>
+</html>
